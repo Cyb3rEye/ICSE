@@ -1,0 +1,36 @@
+<html>
+<title>I.C.S.E</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-J01jr7rrJqxij+hUE1E+8N35mlD7L/TMrAO7tOarwMP7AWJM3P/lGXOjt0KLNhtE" crossorigin="anonymous">
+
+<nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Improved Computer Security Examination<br><h6>Made by Cyb3rEyes</h6></a>
+</nav>
+<br><br><br><br>
+<div class="jumbotron">
+  <h1 class="display-3">Score Report</h1>
+  <p class="lead"> <b>Vulnerabilities: </b>{{ amtfound }}/{{ numvuln }}<br><b>Score: </b>{{ cscore }}/{{ mxscore }}</p>
+  <hr class="my-4">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Value</th>
+      <th scope="col">Finders</th>
+    </tr>
+  </thead>
+  <tbody>  
+{% for v in fvulns %}
+    <tr>
+        <th scope="row">{{ v['category'] }}</th>
+        <td>{{ v['description'] }}</td>
+        <td>{{ v['pointvalue'] }}</td>
+      <td>1/7 (#1)</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+  <p class="lead">
+  </p>
+</div>
